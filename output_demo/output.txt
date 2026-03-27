@@ -1,19 +1,74 @@
-Câu hỏi (gõ 'exit' để thoát): Kỹ thuật cầm máu
+(venv) nqc@nqc-Vivobook-ASUSLaptop-K3405VA-S3405VA:~/Documents/RagChatbot$ python3 chat.py 
+
+Câu hỏi (gõ 'exit' để thoát): Khi nao nen di cap cuu?
 
 Câu trả lời:
 
-Các kỹ thuật cầm máu tạm thời (theo tài liệu):
+Nên đi cấp cứu ngay khi có các tình huống sau:
 
-- Gấp chi tối đa: biện pháp đơn giản để cầm máu bằng cách gấp chi khiến các động mạch bị đè, dùng ngay sau khi bị thương; chống chỉ định nếu có gãy xương kèm theo. Cách thực hiện khác nhau theo vị trí (cẳng tay/bàn tay: gấp cẳng tay vào cánh tay và cố định; cánh tay: kẹp vào nách bằng vật chèn và buộc chặt vào thân; cẳng chân/bàn chân: kéo cẳng chân ép vào đùi, có thể đệm băng vào khoeo). (source:36)
+- Mất ý thức, hôn mê. (source:page 89)  
+- Chấn thương sọ não, gãy xương do ngã cao. (source:page 89)  
+- Bỏng sâu. (source:page 89)  
+- Các trường hợp nặng khác (tất cả các ý trên). (source:page 89)  
+- Tai nạn do điện: phải tách nạn nhân khỏi nguồn điện, gọi cấp cứu và xử lý theo quy trình ABCDE. (source:page 89)  
+- Nạn nhân bị sét đánh: đưa đến nơi khô, thoáng, gọi hỗ trợ y tế ngay (115) và xử lý theo ABCDE. (source:page 89)  
+- Cụt chi (chi bị đứt rời): cần sơ cứu phần chi bị đứt, gửi theo nạn nhân và chuyển ngay đến cơ sở y tế. (source:page 87)
 
-- Ấn mạch máu (chẹn mạch): dùng ngón tay ấn chặt lên điểm mạch nằm sát xương phía trên vết thương để ngăn máu chảy xuống; áp dụng cho vết thương chảy máu tĩnh mạch hoặc động mạch nhỏ. (source:37)
+Gọi 115 để được tư vấn, cấp cứu và vận chuyển nạn nhân đến bệnh viện hoặc cơ sở y tế gần nhất. Khi đưa nạn nhân vào viện nên có người đi cùng để theo dõi và sẵn sàng cấp cứu khi cần thiết. (source:page 9; page 125)
 
-- Băng ép (băng ép trực tiếp): đặt gạc/vải sạch phủ kín vết thương rồi băng cuộn ép chặt bằng băng vòng hoặc băng dạng dấu nhân; dùng cho chảy máu mao mạch, tĩnh mạch hoặc động mạch nhỏ. Nếu băng ép không cầm được máu thì phải dùng biện pháp khác. (source:37)
+Câu hỏi (gõ 'exit' để thoát): so cap cuu khi bi bong
 
-- Băng chèn (packing): chèn gạc vào vết thương rồi băng cố định; áp dụng cho vết thương chảy máu từ mạch nhỏ, tĩnh mạch hoặc động mạch. (source:37)
+Câu trả lời:
 
-- Garô / đặt và thao tác garô bằng vải: (tài liệu có hình minh họa thao tác garô bằng vải). (source:41)
+Các bước sơ cấp cứu khi bị bỏng (theo tài liệu):
 
-- Băng cầm máu mạch cổ: do vị trí đặc biệt, dùng vật chẹn (băng, vải cuộn) chặn lên mạch cổ và cố định băng; có hai cách cố định (băng chéo từ nách bên đối diện vòng qua cổ bên tổn thương hoặc dùng tay bên đối diện làm điểm tỳ để cuốn băng). Chọn cách phù hợp tùy tình trạng người bệnh. (source:41)
+1. Đảm bảo an toàn, loại bỏ nguồn gây bỏng
+- Đảm bảo không có nguy hiểm cho người cứu và nạn nhân; không đi vào khu vực có vật liệu dễ cháy. (source:73,125)
 
-Ghi nhớ nguyên tắc hỗ trợ khi cầm máu: thực hiện khẩn trương, dùng mọi phương tiện có sẵn để kiểm soát chảy máu nhanh nhất, báo y tế hỗ trợ và chuyển nạn nhân; nếu nghi sốc đặt nạn nhân nằm đầu thấp chân cao (hoặc tư thế nằm nghiêng an toàn khi nôn); không rút dị vật ra khỏi vết thương; giữ ấm, nới lỏng quần áo, an ủi nạn nhân, không cho ăn uống và liên tục theo dõi các chỉ số sinh tồn. (source:34; source:36)
+2. Nếu quần áo nạn nhân đang cháy
+- Yêu cầu nạn nhân dừng lại (không được chạy); nằm xuống đất; lăn để dập lửa (Dừng – Nằm – Lăn / Drop‑Roll). Có thể dùng bình cứu hỏa, chăn ướt, vải ướt… để dập lửa (không trùm kín mặt). (source:73)
+
+3. Lưu ý tổn thương đường hô hấp
+- Nhận biết dấu hiệu nghi ngờ bỏng đường thở: nói khàn, khó nói, khó nuốt, cảm giác khó chịu ở cổ họng; ho khan, có đờm/đen bồ hóng hoặc lẫn máu; thở khó, thở nhanh, nông, có tiếng rít; đột ngột mất ý thức. Phát hiện sớm tổn thương đường thở rất quan trọng vì có thể suy hô hấp nhanh. (source:73,70)
+- Nếu đường thở bị ảnh hưởng, phải giữ tư thế phù hợp để thông thoáng đường thở; trong một số trường hợp cần đặt ống thông mũi‑miệng hoặc phải mở khí quản. (source:papers/so_cap_cuu_3.pdf, Trang:3 -> tr.3)
+
+4. Phòng chống nhiễm khuẩn
+- Vết bỏng vốn vô khuẩn; khi cấp cứu phải tránh làm bẩn: không dùng nước không sạch để dội/đắp lên vết bỏng; rửa tay sạch nếu có điều kiện và hạn chế chạm vào vết bỏng. (source:papers/so_cap_cuu_3.pdf, Trang:3)
+
+5. Băng vết bỏng (sơ cứu tại chỗ)
+- Không bôi dầu mỡ, dung dịch cồn hoặc kem kháng sinh lên vết bỏng. (source:papers/so_cap_cuu_3.pdf, Trang:3)
+- Không chọc vỡ các túi phỏng nước; không bóc da hoặc lột mảnh quần áo dính vào vết bỏng. (source:papers/so_cap_cuu_3.pdf, Trang:3)
+- Che vùng bỏng bằng gạc/vải vô khuẩn (nếu có) hoặc gạc/vải càng sạch càng tốt; đệm một lớp bông thấm trước khi băng co giãn; nếu không có băng co giãn thì băng lỏng để tránh chèn ép khi sưng. (source:papers/so_cap_cuu_3.pdf, Trang:3)
+- Nếu bỏng bàn tay có thể cho bàn tay vào túi nhựa rồi băng lỏng cổ tay. (source:papers/so_cap_cuu_3.pdf, Trang:3)
+
+6. Những điều cần làm ngay tiếp theo
+- Phát hiện kịp thời các thương tổn nghiêm trọng (nhất là đường hô hấp) và sắp xếp đưa nạn nhân đến cơ sở y tế ngay lập tức. (source:70,125)
+
+7. Những điều không được làm
+- Không dùng nước bẩn, dầu mỡ, cồn, thuốc mỡ hay bôi thuốc không rõ; không chọc túi phỏng; không bóc da hay lôi quần áo dính vào vết bỏng. (source:papers/so_cap_cuu_3.pdf, Trang:3)
+
+Lưu ý: Người cấp cứu cần giữ bình tĩnh, đánh giá hiện trường không gây nguy hiểm cho bản thân, thực hiện sơ cứu kịp thời và tổ chức chuyển nạn nhân đến cơ sở y tế khi cần. (source:125)
+
+Câu hỏi (gõ 'exit' để thoát): toi bi hen suyen, so cap cuu nhu the nao?
+
+Câu trả lời:
+
+Tôi không biết dựa trên các tài liệu đã cung cấp.
+
+Câu hỏi (gõ 'exit' để thoát): khi bi ngat xiu, so cap cuu nhu the nao?
+
+Câu trả lời:
+
+Khi có người bị ngất xỉu, thực hiện theo quy trình sau:
+
+1. Đặt nạn nhân nằm xuống, nâng và đỡ chân lên để tăng lượng máu về não. (source:papers/so_cap_cuu_3.pdf:5)  
+2. Đảm bảo thông thoáng khí (mở cửa sổ nếu cần). (source:papers/so_cap_cuu_3.pdf:5)  
+3. Nếu nạn nhân tỉnh lại: trấn an và dìu nạn nhân ngồi dậy từ từ. (source:papers/so_cap_cuu_3.pdf:5)  
+4. Kiểm tra nạn nhân có bị thương do ngã hay không để xử trí vết thương. (source:papers/so_cap_cuu_3.pdf:5)  
+5. Nếu nạn nhân không tỉnh: kiểm tra mạch và nhịp thở; nếu cần tiến hành hô hấp nhân tạo. (source:papers/so_cap_cuu_3.pdf:5)  
+6. Đặt nạn nhân ở tư thế hồi sức và liên hệ cấp cứu (gọi 115). (source:papers/so_cap_cuu_3.pdf:5)  
+7. Nếu nạn nhân có dấu hiệu ngất lại, đặt đầu nạn nhân giữa hai đầu gối của họ và yêu cầu hít thở sâu. (source:papers/so_cap_cuu_3.pdf:5)
+
+Luôn giữ ấm cho nạn nhân và tiếp tục kiểm tra mạch, nhịp thở và ý thức cho đến khi có nhân viên y tế đến. (source:papers/so_cap_cuu.pdf:35)
+
+Câu hỏi (gõ 'exit' để thoát): 
