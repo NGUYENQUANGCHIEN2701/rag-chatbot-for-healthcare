@@ -1,95 +1,81 @@
-# 🤖 RagChatbot - Hệ thống Hỏi đáp Thông minh với Tài liệu PDF
+# 🤖 Healthcare Assistant AI - RAG Chatbot
 
-Chào mừng bạn đến với **RagChatbot**, một giải pháp hỏi đáp tự động sử dụng kỹ thuật **Retrieval-Augmented Generation (RAG)**. Hệ thống cho phép bạn "trò chuyện" trực tiếp với các tệp dữ liệu PDF (như tài liệu y tế, hướng dẫn sơ cứu, báo cáo khoa học...) một cách chính xác và hiệu quả.
+Chào mừng bạn đến với **Healthcare Assistant AI**, một giải pháp hỏi đáp tự động sử dụng kỹ thuật **Retrieval-Augmented Generation (RAG)** với kiến trúc hiện đại (FastAPI + React). Hệ thống cho phép bạn "trò chuyện" trực tiếp với các tài liệu y tế (đã được lập chỉ mục) thông qua giao diện web trực quan, đẹp mắt.
 
 ---
 
 ## ✨ Tính năng nổi bật
 
-- **🔍 Tìm kiếm thông minh**: Sử dụng Vector Database (FAISS) để tìm kiếm ngữ nghĩa chính xác thay vì chỉ khớp từ khóa đơn thuần.
-- **🧠 Phản hồi tự nhiên**: Tích hợp mô hình ngôn ngữ lớn (LLM) của OpenAI để tổng hợp câu trả lời mạch lạc, dễ hiểu.
-- **📍 Trích dẫn nguồn**: Cung cấp số trang và tên file tài liệu gốc cho mỗi câu trả lời để đảm bảo tính minh bạch.
-- **⚡ Tốc độ vượt trội**: Xử lý hàng trăm trang tài liệu trong tích tắc nhờ chỉ mục vector hiệu năng cao.
+- **🔍 Kiến trúc RAG Chuẩn**: Sử dụng Vector Database (FAISS) kết hợp LangChain.
+- **🧠 Backend FastAPI**: Hiệu năng cao, dễ dàng mở rộng. Tích hợp OpenAI GPT-4o-mini tối ưu.
+- **💻 Frontend React**: Giao diện UI Chatbot đẹp mắt, Dark Mode Glassmorphism hiện đại, dễ sử dụng.
+- **⚡ Đã có sẵn Dữ liệu**: Dữ liệu đã được index vào `backend/db/faiss_index` nên không cần tốn thời gian embedding lại!
 
 ---
 
-## 📸 Demo Output
-
-Dưới đây là ví dụ chatbot trả lời các câu hỏi về **Sơ cấp cứu** dựa trên tài liệu trong thư mục `papers/`:
-
-> **Người dùng:** *Khi nào nên đi cấp cứu?*  
-> **Chatbot:** Nên đi cấp cứu ngay khi có các tình huống sau:
-> - Mất ý thức, hôn mê. (source: page 89)
-> - Chân thương sọ não, gãy xương do ngã cao. (source: page 89)
-> - Bỏng sâu. (source: page 89)
-> ...
-> - **Gọi 115** để được tư vấn và vận chuyển nạn nhân đến bệnh viện gần nhất. (source: page 9)
-
-> **Người dùng:** *Khi bị ngất xỉu, sơ cấp cứu như thế nào?*  
-> **Chatbot:**
-> 1. Đặt nạn nhân nằm xuống, nâng chân lên để tăng máu về não.
-> 2. Đảm bảo thông thoáng khí.
-> 3. Kiểm tra mạch và nhịp thở; nếu cần tiến hành hô hấp nhân tạo.
-> ... (Nguồn: papers/so_cap_cuu_3.pdf:5)
-
----
-
-## 📑 Cấu trúc dự án
+## 📑 Cấu trúc dự án mới
 
 ```text
-RagChatbot/
-├── papers/               # 📚 Nơi chứa các file PDF đầu vào (Data source)
-├── db/                   # 🗄️ Lưu trữ cơ sở dữ liệu vector (FAISS Index)
-├── build_index.py        # 🛠️ Script xử lý PDF & xây dựng chỉ mục
-├── chat.py               # 💬 Giao diện Chatbot chính
-├── requirements.txt      # 📦 Danh sách thư viện cần thiết
-└── .env                  # 🔑 Cấu hình OpenAI API Key
+rag-chatbot-for-healthcare/
+├── backend/                  # ⚙️ Thư mục chứa mã nguồn Backend (Python/FastAPI)
+│   ├── db/                   # 🗄️ Chứa Vector Database (FAISS index) đã tạo sẵn
+│   ├── main.py               # 🚀 File chạy chính của server FastAPI
+│   ├── services.py           # 🧠 Logic AI LangChain, kết nối OpenAI
+│   ├── build_index.py        # 🛠️ Script tạo index (chỉ dùng khi có data mới)
+│   ├── requirements.txt      # 📦 Thư viện Python
+│   └── .env.example          # 🔑 Mẫu cấu hình biến môi trường
+├── frontend/                 # 🌐 Thư mục chứa mã nguồn Frontend (ReactJS/Vite)
+│   ├── src/                  # 🎨 Mã nguồn React components & CSS
+│   ├── package.json          # 📦 Cấu hình Node & Dependencies
+│   └── vite.config.js
+└── papers/                   # 📚 Nơi lưu các file PDF gốc
 ```
 
 ---
 
 ## 🚀 Hướng dẫn cài đặt & Sử dụng
 
-### 1. Cài đặt môi trường
+### 1. Cài đặt Backend (API Server)
 
-Yêu cầu **Python 3.8+**. Khuyến khích sử dụng môi trường ảo:
+Yêu cầu **Python 3.8+**. Mở terminal và chạy các lệnh sau:
 
 ```bash
-# Tạo và kích hoạt môi trường ảo
-python3 -m venv venv
-source venv/bin/activate  # Linux/macOS
+cd backend
 
 # Cài đặt thư viện
 pip install -r requirements.txt
+
+# Tạo file cấu hình và điền API Key
+cp .env.example .env
+# Mở file .env và nhập OPENAI_API_KEY=sk-... của bạn
+
+# Chạy server FastAPI (chạy trên cổng 8000)
+python -m uvicorn main:app --reload
 ```
 
-### 2. Cấu hình API Key
+### 2. Cài đặt Frontend (Giao diện Web)
 
-Tạo file `.env` tại thư mục gốc:
-```text
-OPENAI_API_KEY=sk-xxxx... # Thay bằng key của bạn
+Yêu cầu **Node.js**. Đã được khởi tạo bằng Vite tương thích cực tốt với môi trường Node 16.x. Mở một terminal mới và chạy:
+
+```bash
+cd frontend
+
+# Cài đặt dependencies (React, Axios,...)
+npm install
+
+# Khởi chạy giao diện web
+npm run dev
 ```
 
-### 3. Quy trình vận hành
-
-1.  **Chuẩn bị dữ liệu**: Chép các file PDF vào thư mục `papers/`.
-2.  **Xây dựng chỉ mục**: Chạy lệnh để "dạy" chatbot nội dung tài liệu:
-    ```bash
-    python3 build_index.py
-    ```
-3.  **Bắt đầu hỏi đáp**:
-    ```bash
-    python3 chat.py
-    ```
+### 3. Trải nghiệm
+Mở trình duyệt theo đường dẫn hiển thị ở terminal `frontend` (thường là `http://localhost:5173`). Bạn có thể bắt đầu chat ngay với trợ lý AI!
 
 ---
 
 ## 🛠 Công nghệ sử dụng
 
-- **LangChain**: Khung xương kết nối LLM và dữ liệu.
-- **OpenAI (GPT-5/Embeddings)**: Bộ não xử lý ngôn ngữ.
-- **FAISS**: Thư viện tìm kiếm vector cực nhanh từ Facebook AI.
-- **PyPDF**: Trình đọc nội dung tài liệu PDF.
+- **Backend**: FastAPI, LangChain, OpenAI, FAISS, PyPDF.
+- **Frontend**: React 18, Vite, Axios, CSS Vanilla (Glassmorphism UI).
 
 ---
-*Phát triển bởi NQC.*
+*Phát triển bởi NQC. Refactored architecture.*
