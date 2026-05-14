@@ -3,6 +3,8 @@ import axios from 'axios';
 import './App.css';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import EmergencyMode from './EmergencyMode';
+
 // SVG Icons for no-dependency beauty
 const SendIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -35,6 +37,7 @@ function App() {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isEmergencyMode, setIsEmergencyMode] = useState(false);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -81,10 +84,17 @@ function App() {
           <div className="bot-avatar">
             <BotIcon />
           </div>
-          <div>
+          <div style={{ flex: 1 }}>
             <h1>Healthcare Assistant AI</h1>
             <p>Trợ lý sơ cấp cứu nội bộ</p>
           </div>
+          <button 
+            className="emergency-btn" 
+            onClick={() => setIsEmergencyMode(true)}
+            title="Kích hoạt Gọi Cấp cứu Voice AI"
+          >
+            🚨 CẤP CỨU
+          </button>
         </header>
 
         <div className="chat-messages">
@@ -139,6 +149,10 @@ function App() {
           </div>
         </form>
       </div>
+
+      {isEmergencyMode && (
+        <EmergencyMode onClose={() => setIsEmergencyMode(false)} />
+      )}
     </div>
   );
 }

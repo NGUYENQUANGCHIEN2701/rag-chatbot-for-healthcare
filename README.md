@@ -7,7 +7,7 @@ Chào mừng bạn đến với **Healthcare Assistant AI**, một giải pháp 
 ## ✨ Tính năng nổi bật
 
 - **🔍 Kiến trúc RAG Chuẩn**: Sử dụng Vector Database (FAISS) kết hợp LangChain.
-- **🧠 Backend FastAPI**: Hiệu năng cao, dễ dàng mở rộng. Tích hợp OpenAI GPT-4o-mini tối ưu.
+- **🧠 Backend FastAPI**: Hiệu năng cao, dễ dàng mở rộng. Tích hợp OpenAI GPT-5o-mini tối ưu.
 - **💻 Frontend React**: Giao diện UI Chatbot đẹp mắt, Dark Mode Glassmorphism hiện đại, dễ sử dụng.
 - **⚡ Đã có sẵn Dữ liệu**: Dữ liệu đã được index vào `backend/db/faiss_index` nên không cần tốn thời gian embedding lại!
 
