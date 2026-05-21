@@ -44,7 +44,7 @@ def get_voice_token():
     if not api_key:
         raise HTTPException(status_code=500, detail="OPENAI_API_KEY not found in environment")
         
-    url = "https://api.openai.com/v1/realtime/sessions"
+    url = "https://api.openai.com/v1/realtime/client_secrets"
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
@@ -68,22 +68,39 @@ def get_voice_token():
     )
     
     data = {
-        "model": "gpt-4o-mini-realtime-preview-2024-12-17",
-        "modalities": ["audio", "text"],
-        "instructions": system_instruction,
-        "voice": "alloy",
-        "turn_detection": {
-            "type": "server_vad",
-            "threshold": 0.5,
-            "prefix_padding_ms": 300,
-            "silence_duration_ms": 200
+        "expires_after": {
+            "anchor": "created_at",
+            "seconds": 600
+        },
+        "session": {
+            "type": "realtime",
+            "model": "gpt-realtime-2",
+            "instructions": system_instruction,
+            "audio": {
+                "input": {
+                    "turn_detection": {
+                        "type": "server_vad",
+                        "threshold": 0.5,
+                        "prefix_padding_ms": 300,
+                        "silence_duration_ms": 200
+                    }
+                }
+            }
         }
     }
     
     try:
-        response = requests.post(url, headers=headers, json=data)
-        response.raise_for_status()
+        response = requests.post(url, headers=headers, json=data, timeout=15)
+        if not response.ok:
+            error_detail = response.text.strip()
+            print(f"Error fetching voice token: {response.status_code} {error_detail}")
+            raise HTTPException(
+                status_code=500,
+                detail=f"Voice token error: {response.status_code} {error_detail}"
+            )
         return response.json()
+    except HTTPException:
+        raise
     except Exception as e:
         print(f"Error fetching voice token: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to fetch voice token")

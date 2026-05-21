@@ -28,12 +28,12 @@ const EmergencyMode = ({ onClose }) => {
       streamRef.current = stream;
 
       setStatus('Đang kết nối y tế khẩn cấp...');
-      
+
       // Get Ephemeral Token
       const tokenRes = await fetch('http://localhost:8000/api/voice-token');
       if (!tokenRes.ok) throw new Error('Cannot get voice token');
       const sessionData = await tokenRes.json();
-      const ephemeralKey = sessionData.client_secret.value;
+      const ephemeralKey = sessionData.value;
 
       // Setup WebRTC
       const pc = new RTCPeerConnection();
@@ -59,9 +59,8 @@ const EmergencyMode = ({ onClose }) => {
       const offer = await pc.createOffer();
       await pc.setLocalDescription(offer);
 
-      const baseUrl = "https://api.openai.com/v1/realtime";
-      const model = "gpt-4o-mini-realtime-preview-2024-12-17";
-      const sdpResponse = await fetch(`${baseUrl}?model=${model}`, {
+      const baseUrl = "https://api.openai.com/v1/realtime/calls";
+      const sdpResponse = await fetch(baseUrl, {
         method: "POST",
         body: offer.sdp,
         headers: {
@@ -107,11 +106,11 @@ const EmergencyMode = ({ onClose }) => {
         <h2 className="emergency-title">CẤP CỨU NGẤT XỈU</h2>
         <div className={`pulsing-circle ${isActive ? 'active' : ''}`}>
           <div className="microphone-icon">
-             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                <line x1="12" y1="19" x2="12" y2="22"></line>
-             </svg>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="22"></line>
+            </svg>
           </div>
         </div>
         <p className="emergency-status">{status}</p>
